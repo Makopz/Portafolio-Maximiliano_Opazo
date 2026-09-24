@@ -835,42 +835,83 @@ main {
 
 
 /* ========================================
-   PROJECTS
-   ======================================== */
+   PROYECTOS
+======================================== */
+
+.projects-section {
+    position: relative;
+}
+
+
+/* ENCABEZADO */
+
+.section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.section-number {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--purple);
+    padding-top: 0.4rem;
+}
+
+.section-label {
+    margin: 0 0 0.4rem;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+}
+
+.section-heading h2 {
+    margin: 0;
+}
+
+
+/* GRID */
 
 .projects-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
+
+
+/* TARJETAS */
 
 .project-card {
     position: relative;
 
-    padding: 30px;
-
-    min-height: 330px;
-
     display: flex;
-
     flex-direction: column;
+
+    min-height: 470px;
+    padding: 1.6rem;
 
     background:
         linear-gradient(
             145deg,
-            rgba(168, 85, 247, 0.06),
-            rgba(255, 107, 53, 0.02)
-        );
+            rgba(255, 255, 255, 0.025),
+            rgba(255, 255, 255, 0)
+        ),
+        var(--bg-card);
 
-    border: 1px solid var(--border);
-
-    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
 
     overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
 }
+
+
+/* LÍNEA SUPERIOR */
 
 .project-card::before {
     content: "";
@@ -880,95 +921,258 @@ main {
     top: 0;
     left: 0;
 
-    width: 3px;
-    height: 100%;
+    width: 100%;
+    height: 2px;
 
-    background:
-        linear-gradient(
-            var(--purple),
-            var(--orange)
-        );
+    opacity: 0.8;
 
-    opacity: 0.5;
+    transition: height 0.35s ease;
 }
+
+
+/* HOVER */
 
 .project-card:hover {
     transform: translateY(-8px);
-
-    border-color: rgba(168, 85, 247, 0.6);
-
-    box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.35),
-        0 0 25px rgba(168, 85, 247, 0.1);
 }
 
-.project-card-header {
-    margin-bottom: 30px;
+.project-card:hover::before {
+    height: 3px;
+}
+
+
+/* COLORES */
+
+.project-purple::before {
+    background: linear-gradient(
+        90deg,
+        var(--purple),
+        var(--purple-bright)
+    );
+}
+
+.project-purple:hover {
+    border-color: rgba(168, 85, 247, 0.45);
+
+    box-shadow:
+        0 15px 45px rgba(168, 85, 247, 0.12);
+}
+
+
+.project-orange::before {
+    background: linear-gradient(
+        90deg,
+        var(--orange),
+        var(--orange-bright)
+    );
+}
+
+.project-orange:hover {
+    border-color: rgba(255, 107, 53, 0.45);
+
+    box-shadow:
+        0 15px 45px rgba(255, 107, 53, 0.12);
+}
+
+
+.project-next::before {
+    background: linear-gradient(
+        90deg,
+        var(--text-secondary),
+        transparent
+    );
+}
+
+
+/* PARTE SUPERIOR */
+
+.project-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 2rem;
 }
 
 .project-number {
-    color: var(--orange);
-
     font-family: monospace;
-
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
 }
 
-.project-card h3 {
-    font-size: 1.5rem;
 
-    margin-bottom: 15px;
-}
+.project-status {
+    padding: 0.35rem 0.65rem;
 
-.project-card p {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+
     color: var(--text-secondary);
 
-    font-size: 0.95rem;
-
-    margin-bottom: 20px;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
 }
+
+
+/* ICONO */
+
+.project-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 64px;
+    height: 64px;
+
+    margin-bottom: 1.5rem;
+
+    border-radius: 14px;
+
+    font-family: monospace;
+    font-size: 1.15rem;
+    font-weight: bold;
+
+    background: rgba(168, 85, 247, 0.08);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+
+    color: var(--purple);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.project-card:hover .project-icon {
+    transform: scale(1.05);
+}
+
+
+.project-orange .project-icon {
+    background: rgba(255, 107, 53, 0.08);
+    border-color: rgba(255, 107, 53, 0.2);
+    color: var(--orange);
+}
+
+
+.project-next .project-icon {
+    background: rgba(161, 161, 181, 0.06);
+    border-color: rgba(161, 161, 181, 0.15);
+    color: var(--text-secondary);
+}
+
+
+/* CONTENIDO */
+
+.project-content {
+    flex: 1;
+}
+
+
+.project-category {
+    margin-bottom: 0.5rem;
+
+    color: var(--text-secondary);
+
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+}
+
+
+.project-content h3 {
+    margin-bottom: 1rem;
+
+    font-size: 1.5rem;
+}
+
+
+.project-content > p {
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+
+/* TECNOLOGÍAS */
 
 .project-technologies {
     display: flex;
-
     flex-wrap: wrap;
+    gap: 0.5rem;
 
-    gap: 8px;
-
-    margin-top: auto;
-
-    margin-bottom: 25px;
+    margin-top: 1.5rem;
 }
 
-.project-technologies span,
-.skill-list span,
-.certification-list span {
-    padding: 5px 10px;
 
-    border: 1px solid rgba(168, 85, 247, 0.25);
+.project-technologies span {
+    padding: 0.4rem 0.65rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
 
     color: var(--text-secondary);
 
     font-family: monospace;
+    font-size: 0.7rem;
 
-    font-size: 0.75rem;
-
-    background: rgba(168, 85, 247, 0.04);
+    background: rgba(255, 255, 255, 0.025);
 }
+
+
+/* FOOTER */
+
+.project-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 2rem;
+    padding-top: 1rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+.project-type {
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+}
+
 
 .project-link {
-    color: var(--orange);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
 
-    font-size: 0.9rem;
+    color: var(--text-main);
 
-    transition: var(--transition);
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        gap 0.25s ease;
 }
 
-.project-link:hover {
-    color: var(--orange-bright);
 
-    text-shadow:
-        0 0 10px rgba(255, 107, 53, 0.5);
+.project-link:hover {
+    color: var(--purple);
+    gap: 0.7rem;
+}
+
+
+.project-orange .project-link:hover {
+    color: var(--orange);
+}
+
+
+.project-link-disabled {
+    color: var(--text-secondary);
+    opacity: 0.5;
 }
 
 
@@ -1292,7 +1496,10 @@ main {
     .skills-grid {
         grid-template-columns: 1fr;
     }
-
+    
+    .projects-grid {
+    grid-template-columns: 1fr 1fr;
+    }
 }
 
 
@@ -1417,5 +1624,17 @@ main {
         flex-direction: column;
 
         text-align: center;
+    }
+
+    .projects-grid {
+    grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        min-height: auto;
+    }
+
+    .section-heading {
+        gap: 1rem;
     }
 }
