@@ -22,6 +22,10 @@
          NAVEGACIÓN
          ======================================== -->
 
+    <!-- ========================================
+     NAVEGACIÓN
+     ======================================== -->
+
     <header class="site-header">
 
         <nav class="navbar">
@@ -30,7 +34,20 @@
                 MO
             </a>
 
-            <ul class="nav-links">
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                type="button"
+                aria-label="Abrir menú de navegación"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+
                 <li>
                     <a href="#inicio">Inicio</a>
                 </li>
@@ -54,6 +71,7 @@
                 <li>
                     <a href="#contacto">Contacto</a>
                 </li>
+
             </ul>
 
         </nav>
@@ -63,53 +81,83 @@
 
     <main>
 
-        <!-- ========================================
-             HERO / INICIO
-             ======================================== -->
+    <!-- ========================================
+        HERO / INICIO
+        ======================================== -->
 
-        <section id="inicio" class="hero">
+    <section id="inicio" class="hero">
 
-            <div class="hero-content">
+        <div class="hero-content">
 
-                <p class="hero-subtitle">
-                    Estudiante de Programación
-                </p>
+            <p class="hero-subtitle">
+                Estudiante de Programación
+            </p>
 
-                <h1>
-                    Maximiliano Opazo
-                </h1>
+            <h1>
+                Maximiliano
+                <span>Opazo</span>
+            </h1>
 
-                <!-- Frase pendiente de completar -->
+            <!-- Frase personal pendiente -->
 
-                <p class="hero-description">
-                    <!-- Aquí irá tu frase personal -->
-                </p>
+            <p class="hero-description">
+                <!-- Aquí irá tu frase personal -->
+            </p>
 
-                <div class="hero-buttons">
+            <div class="hero-buttons">
 
-                    <a href="#proyectos" class="button">
-                        Ver proyectos
-                    </a>
+                <a href="#proyectos" class="button">
+                    Ver proyectos
+                </a>
 
-                    <a href="#contacto" class="button button-secondary">
-                        Contacto
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- Elemento que posteriormente será interactivo -->
-
-            <div class="hero-visual">
-
-                <div class="hero-core">
-                    <span>MO</span>
-                </div>
+                <a href="#contacto" class="button button-secondary">
+                    Contacto
+                </a>
 
             </div>
 
-        </section>
+            <div class="hero-meta">
+
+                <span>
+                    <span class="status-dot"></span>
+                    Disponible para aprender
+                </span>
+
+                <span>
+                    Santiago, Chile
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual" id="hero-visual">
+
+            <div class="hero-grid"></div>
+
+            <div class="hero-orbit hero-orbit-one"></div>
+
+            <div class="hero-orbit hero-orbit-two"></div>
+
+            <div class="hero-orbit hero-orbit-three"></div>
+
+            <div class="hero-core">
+
+                <span>MO</span>
+
+                <div class="core-line core-line-top"></div>
+                <div class="core-line core-line-bottom"></div>
+
+            </div>
+
+            <div class="hero-marker marker-one"></div>
+            <div class="hero-marker marker-two"></div>
+            <div class="hero-marker marker-three"></div>
+
+        </div>
+
+    </section>
 
 
         <!-- ========================================
