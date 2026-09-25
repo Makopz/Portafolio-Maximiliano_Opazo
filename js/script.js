@@ -23,7 +23,6 @@ if (menuToggle && navLinks) {
             "aria-expanded",
             isOpen
         );
-
     });
 
 
@@ -42,11 +41,9 @@ if (menuToggle && navLinks) {
                 "aria-expanded",
                 "false"
             );
-
         });
 
     });
-
 }
 
 
@@ -88,17 +85,18 @@ if (heroVisual && heroCore) {
             const rotationY =
                 (centerX - mouseX) / 35;
 
+
             heroCore.style.transform =
                 `rotateX(${rotationX}deg)
                  rotateY(${rotationY}deg)
                  translateZ(15px)`;
+
 
             heroVisual.style.transform =
                 `translate(
                     ${rotationY * 0.15}px,
                     ${rotationX * 0.15}px
                 )`;
-
         }
     );
 
@@ -112,8 +110,6 @@ if (heroVisual && heroCore) {
 
             heroVisual.style.transform =
                 "translate(0, 0)";
-
         }
     );
-
 }
