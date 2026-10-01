@@ -28,7 +28,7 @@ El sitio cuenta con un diseño inspirado en una estética cyberpunk, utilizando 
 
 El portafolio puede visualizarse desde GitHub Pages:
 
-**Enlace:** [Agregar aquí el enlace de GitHub Pages]
+**Enlace:** (https://makopz.github.io/Portafolio-Maximiliano_Opazo/)
 
 También es posible ejecutar el proyecto localmente:
 
